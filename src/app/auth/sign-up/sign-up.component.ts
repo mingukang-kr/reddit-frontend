@@ -13,7 +13,13 @@ export class SignUpComponent implements OnInit {
   signupRequestPayload: SignupRequestPayload;
   signupForm: FormGroup;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+    this.signupRequestPayload = {
+      username: '',
+      email: '',
+      password: ''
+    };
+  }
 
   ngOnInit() {
     this.signupForm = new FormGroup({
