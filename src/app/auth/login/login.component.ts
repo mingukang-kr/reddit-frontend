@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   loginRequestPayload: LoginRequestPayload;
+  isError: boolean;
 
   constructor(private authService: AuthService) {
     this.loginRequestPayload = {
