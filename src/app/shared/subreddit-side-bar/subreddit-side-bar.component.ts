@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SubredditService } from 'src/app/subreddit/subreddit.service';
+import { SubredditModel } from 'src/app/subreddit/subreddit-response';
 
 @Component({
   selector: 'app-subreddit-side-bar',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubredditSideBarComponent implements OnInit {
 
-  constructor() { }
+  subreddits: Array<SubredditModel> = [];
+  displayViewAll: boolean;
+
+  constructor(private subredditService: SubredditService) { }
 
   ngOnInit(): void {
+    this.subredditService.getAllSubreddits().subscribe(data => {
+      this.subreddits = data;
+    });
   }
 
 }
