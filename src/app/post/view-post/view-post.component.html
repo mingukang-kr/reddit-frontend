@@ -24,7 +24,7 @@
             <div class="post-comment">
               <form [formGroup]="commentForm" (ngSubmit)="postComment()">
                 <div class="form-group">
-                  <textarea class="form-control" [formControlName]="'text'" placeholder="Your Thoughts?"></textarea>
+                  <textarea class="form-control" [formControlName]="'text'" placeholder="댓글을 남겨주세요."></textarea>
                 </div>
                 <button type="submit" class="login float-right">Comment</button>
               </form>
@@ -45,8 +45,8 @@
         </div>
       </div>
       <div class="col-md-3">
-        <sidebar></sidebar>
-        <sidebar-view-subreddit></sidebar-view-subreddit>
+        <app-side-bar></app-side-bar>
+        <app-subreddit-side-bar></app-subreddit-side-bar>
       </div>
     </div>
   </div>
