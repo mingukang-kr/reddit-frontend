@@ -27,6 +27,7 @@ export class ViewPostComponent implements OnInit {
     this.commentForm = new FormGroup({
       text: new FormControl('', Validators.required)
     });
+    
     this.commentPayload = {
       text: '',
       postId: this.postId

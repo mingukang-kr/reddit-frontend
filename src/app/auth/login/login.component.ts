@@ -32,12 +32,12 @@ export class LoginComponent implements OnInit {
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
-        if (params.registered !== undefined && params.registered === 'true') {
-          this.toastr.success('Signup Successful');
-          this.registerSuccessMessage = 'Please Check your inbox for activation email '
-            + 'activate your account before you Login!';
-        }
-      });
+      if (params.registered !== undefined && params.registered === 'true') {
+        this.toastr.success('Signup Successful');
+        this.registerSuccessMessage = 'Please Check your inbox for activation email ' 
+        + 'activate your account before you Login!';
+      }
+    });
   }
 
   login() {
